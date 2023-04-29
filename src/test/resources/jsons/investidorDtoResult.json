@@ -1,0 +1,12 @@
+{
+  "id": 1,
+  "nome": "Genildo",
+  "cpfCnpj": "29586841804",
+  "tipo": "PF",
+  "conta": {
+    "numero": "000001",
+    "agencia": "001",
+    "saldo": 0,
+    "status": "ABERTO"
+  }
+}
