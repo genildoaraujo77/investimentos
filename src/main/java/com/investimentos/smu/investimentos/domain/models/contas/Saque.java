@@ -21,7 +21,7 @@ public class Saque {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    @NotNull(message = "Valor obrigatório")
     private Double valorSacado;
 
     @NotNull

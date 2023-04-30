@@ -21,11 +21,11 @@ public class Investidor implements Serializable {
 
     @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    @NotNull
+    @NotNull(message = "Nome é obrigatório")
     private String nome;
-    @NotNull
+    @NotNull(message = "cpf ou cnpj é obrigatório")
     private String cpfCnpj;
-    @NotNull @Enumerated(EnumType.STRING)
+    @NotNull(message = "Tipo de investidor é obrigatório, ex.: PF ou PJ") @Enumerated(EnumType.STRING)
     private Tipos tipo;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_conta", referencedColumnName = "id")

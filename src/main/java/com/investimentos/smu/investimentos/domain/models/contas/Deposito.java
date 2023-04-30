@@ -22,7 +22,7 @@ public class Deposito implements Serializable {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    @NotNull(message = "Valor obrigatório")
     private Double valorDepositado;
 
     @NotNull

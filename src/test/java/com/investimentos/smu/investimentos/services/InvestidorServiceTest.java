@@ -36,6 +36,7 @@ public class InvestidorServiceTest {
     @BeforeEach
     public void beforeEach() {
         MockitoAnnotations.initMocks(this);
+        repository.deleteAll();
     }
 
     @Test
@@ -53,16 +54,11 @@ public class InvestidorServiceTest {
         Mockito.when(investidorService.salvaInvestidorECriaConta(investidorDtoInsert)).thenReturn(investidorDtoResult);
 
         InvestidorDto investidorDto = investidorService.salvaInvestidorECriaConta(investidorDtoInsert);
-        assertEquals(1L, investidorDtoResult.getId());
-        assertEquals("Genildo", investidorDtoResult.getNome());
+        assertEquals(1L, investidorDto.getId());
+        assertEquals("Genildo", investidorDto.getNome());
         assertEquals("000001", investidorDto.getConta().getNumero());
 
         verify(investidorService).salvaInvestidorECriaConta(investidorDtoInsert);
-
-    }
-
-    @Test
-    void qualquerOutroTeste() {
 
     }
 
